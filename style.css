@@ -1,0 +1,265 @@
+  :root{
+    --bg:#FBF3D9;
+    --bg-alt:#D9C29C;
+    --bg-panel:#F3E6C4;
+    --ink:#1B2A20;
+    --ink-soft:#54604F;
+    --green-deep:#20513B;
+    --green:#3C7A5B;
+    --green-line:#D8CB9C;
+    --gold:#A9822F;
+    --white:#FFFFFF;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:linear-gradient(to right, var(--bg) 50%, var(--bg-alt) 50%) fixed;
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+  }
+  .bg-watermark{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:min(56vw,560px);
+    opacity:.08;
+    pointer-events:none;
+    z-index:0;
+    user-select:none;
+  }
+  .bg-watermark img{width:100%;display:block;}
+  header.hero, section, footer{position:relative;z-index:1;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 32px;}
+
+  ::selection{background:var(--green-line);color:var(--green-deep);}
+
+  a{color:var(--green-deep);}
+
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--green);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:1px;
+    background:var(--green);
+    display:inline-block;
+  }
+
+  /* HERO */
+  header.hero{
+    padding:88px 0 64px;
+    overflow:hidden;
+  }
+  .hero-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:48px;
+    flex-wrap:wrap;
+  }
+  .hero-name{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:clamp(30px,4.4vw,46px);
+    line-height:1;
+    margin:0 0 16px;
+    color:var(--green-deep);
+    letter-spacing:.01em;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+  .hero-role{
+    font-size:18px;
+    color:var(--ink-soft);
+    max-width:520px;
+    line-height:1.5;
+    margin:0 0 28px;
+    font-family:'Manrope',sans-serif;
+  }
+  .hero-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .pill{
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    padding:6px 12px;
+    border:1px solid var(--green-line);
+    border-radius:100px;
+    color:var(--green-deep);
+    background:var(--white);
+  }
+  .photo-frame{
+    width:200px;
+    height:200px;
+    flex-shrink:0;
+    border-radius:6px;
+    overflow:hidden;
+    border:1px solid var(--green-line);
+    box-shadow:6px 6px 0 var(--bg-panel);
+  }
+  .photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  /* SECTIONS */
+  section{padding:64px 0;}
+  h2.section-title{
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+    font-size:28px;
+    margin:0 0 28px;
+    color:var(--ink);
+  }
+
+  .about-text{
+    font-size:17px;
+    line-height:1.75;
+    color:var(--ink-soft);
+    max-width:640px;
+  }
+  .about-text strong{color:var(--ink);font-weight:700;}
+
+  /* EDUCATION */
+  .edu-card{
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+    background:var(--bg-panel);
+    padding:28px;
+    border-radius:var(--radius);
+    border-left:3px solid var(--green);
+  }
+  .edu-card .degree{
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+    font-size:20px;
+    color:var(--green-deep);
+    margin:0 0 6px;
+  }
+  .edu-card .school{
+    font-size:15px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* SKILLS */
+  .skills-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .skill-tag{
+    font-family:'Space Mono',monospace;
+    font-size:13px;
+    padding:9px 16px;
+    background:var(--bg-panel);
+    border:1px solid var(--green-line);
+    color:var(--ink);
+    border-radius:2px;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .skill-tag:hover{border-color:var(--green);background:var(--bg-panel);}
+
+  /* CERTIFICATIONS */
+  .cert-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;}
+  .cert-item{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:20px;
+    padding:20px 0;
+  }
+  .cert-tag{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--gold);
+    padding-top:2px;
+  }
+  .cert-title{margin:0 0 4px;font-size:16px;color:var(--ink);font-weight:700;font-family:'Manrope',sans-serif;}
+  .cert-sub{margin:0;font-size:14px;color:var(--ink-soft);}
+
+  /* LANGUAGES */
+  .lang-row{display:flex;gap:40px;flex-wrap:wrap;}
+  .lang-item{}
+  .lang-name{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--ink);margin:0 0 4px;}
+  .lang-tag{font-family:'Space Mono',monospace;font-size:12px;color:var(--green);}
+
+  /* CONTACT / FOOTER */
+  footer{padding:64px 0 48px;}
+  .contact-title{
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+    font-size:30px;
+    color:var(--green-deep);
+    margin:0 0 28px;
+    max-width:520px;
+    line-height:1.2;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:12px;
+    margin-bottom:40px;
+    max-width:560px;
+  }
+  .contact-card{
+    padding:12px 14px;
+    background:var(--bg-panel);
+    border-radius:var(--radius);
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .contact-card .icon{
+    width:18px;
+    height:18px;
+    flex-shrink:0;
+    color:var(--green-deep);
+  }
+  .contact-card .icon svg{width:100%;height:100%;display:block;}
+  .contact-card .value{
+    font-size:13px;
+    color:var(--ink);
+    font-weight:600;
+    word-break:break-word;
+    line-height:1.2;
+  }
+  .contact-card:hover{background:var(--green-line);}
+  .foot-note{
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    padding-top:8px;
+  }
+
+  @media (max-width:640px){
+    .wrap{padding:0 20px;}
+    header.hero{padding:56px 0 40px;}
+    .hero-top{flex-direction:column-reverse;align-items:flex-start;}
+    .hero-name{font-size:clamp(26px,8vw,36px);white-space:normal;}
+    .photo-frame{width:140px;height:140px;}
+    section{padding:48px 0;}
+    .cert-item{grid-template-columns:1fr;gap:6px;}
+  }
+
+  :focus-visible{outline:2px solid var(--green);outline-offset:3px;}
